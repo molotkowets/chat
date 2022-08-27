@@ -1,0 +1,19 @@
+.message {
+  display: flex;
+  padding: 14px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+.message span {
+  height: 100%;
+  max-width: 100%;
+}
+.float-left {
+  background: #3C4252;
+  align-self: flex-start;
+  color: #fff;
+}
+.float-right {
+  align-self: flex-end;
+}
