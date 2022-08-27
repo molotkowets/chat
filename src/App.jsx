@@ -11,8 +11,13 @@ function App() {
 
   const [userId, setUserId] = useState(null);
   useEffect(() => {
-    const usersExist = JSON.parse(localStorage.getItem("items"))[0]
-      .defaultValue;
+    let usersExist = false;
+    try {
+      usersExist = JSON.parse(localStorage.getItem("items"))[0].defaultValue;
+    } catch (e) {
+      usersExist = false;
+    }
+
     if (usersExist) {
       const parsedUsers = JSON.parse(localStorage.getItem("items"));
       setUsers(parsedUsers);
@@ -24,7 +29,7 @@ function App() {
     }
   }, [setUsers, userId]);
 
-  console.log(users);
+  // console.log(users);
   return (
     <div className="app">
       {!!userId && (

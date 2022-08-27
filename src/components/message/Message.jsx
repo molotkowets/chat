@@ -1,7 +1,8 @@
 import React from "react";
 import "./message.css";
+import { format } from "date-fns";
 
-function Message(props) {
+function Message({ text }) {
   function float(belongs) {
     let cl;
     belongs === "sender" ? (cl = "float-left") : (cl = "float-right");
@@ -9,8 +10,9 @@ function Message(props) {
   }
 
   return (
-    <div className={float(props.text.belongs) + " message"}>
-      <span>{props.text.value}</span>
+    <div className={float(text.belongs) + " message"}>
+      <span>{text.value}</span>
+      <p className="dateMess">{format(new Date(text.created_at), "PP")}</p>
     </div>
   );
 }
