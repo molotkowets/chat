@@ -3,6 +3,7 @@ import "./user-item.css";
 
 function UserItem({ setUserId, user, currentUserId }) {
   const isActive = user.id === currentUserId;
+
   return (
     <li
       onClick={() => setUserId(user.id)}
@@ -13,7 +14,7 @@ function UserItem({ setUserId, user, currentUserId }) {
 
         <span>
           <p className="username">{user.username}</p>
-          <p className="user-massage">{user.messages[0].value}</p>
+          <p className="user-massage">{user.messages.at(-1).value}</p>
         </span>
       </div>
       <p className="date">Feb 18, 2017</p>
