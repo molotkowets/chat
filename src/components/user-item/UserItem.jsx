@@ -1,9 +1,10 @@
+import { format } from "date-fns";
 import React from "react";
 import "./user-item.css";
 
 function UserItem({ setUserId, user, currentUserId }) {
   const isActive = user.id === currentUserId;
-
+  const lastMessage = user.messages.at(-1);
   return (
     <li
       onClick={() => setUserId(user.id)}
@@ -17,7 +18,7 @@ function UserItem({ setUserId, user, currentUserId }) {
           <p className="user-massage">{user.messages.at(-1).value}</p>
         </span>
       </div>
-      <p className="date">Feb 18, 2017</p>
+      <p className="date">{format(new Date(lastMessage.created_at), "PP")}</p>
     </li>
   );
 }
