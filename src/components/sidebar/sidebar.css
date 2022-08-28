@@ -1,6 +1,7 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
   min-width: 390px;
-  overflow: auto;
   height: 100%;
   box-sizing: border-box;
   background: #FFFFFF;
@@ -43,4 +44,7 @@
   line-height: 24px;
   margin: 35px 12px 30px;
   color: #65A5C2;
+}
+.chats {
+  overflow: auto;
 }
