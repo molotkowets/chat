@@ -7,8 +7,6 @@ import { useState } from "react";
 import send from "../../asset/icon/send.svg";
 
 function Chat({ userId }) {
-  // const [items, setItems] = useState([]);
-
   function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -76,14 +74,15 @@ function Chat({ userId }) {
       pushMessage();
     }
   }
+
   return (
     <div className="chat">
       <div className="header-chat">
         <span className="verification">
-          <img className="avatar" src={avatar} alt="" />
+          <img className="avatar" src={user.avatar} alt="" />
         </span>
 
-        <p>Josefina</p>
+        <p>{user.username}</p>
       </div>
       <div className="input-message">
         <div className="messages">

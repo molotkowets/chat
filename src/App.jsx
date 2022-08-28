@@ -29,7 +29,6 @@ function App() {
     }
   }, [setUsers, userId]);
 
-  // console.log(users);
   return (
     <div className="app">
       {!!userId && (
